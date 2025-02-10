@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #000;
+}
+
+@keyframes spinZoomIn {
+	0% {
+		transform: translate(-50%, -50%) scale(0.1) rotate(0deg);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1) rotate(360deg);
+		opacity: 1;
+	}
+}
+
+#image {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	height: 100vh; /* Робимо висоту рівною екрану */
+	transform: translate(-50%, -50%) scale(0.1) rotate(0deg);
+	transform-origin: center;
+	opacity: 0;
+	animation: spinZoomIn 3s ease-out forwards infinite;
+	animation-direction: alternate;
+  animation-delay: 3s; /
+}

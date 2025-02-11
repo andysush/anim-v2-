@@ -35,7 +35,7 @@ body {
 	transform: translate(-50%, -50%) scale(0.1) rotate(0deg);
 	transform-origin: center;
 	opacity: 0;
-	animation: spinZoomIn 3s ease-out forwards infinite;
+	animation: spinZoomIn 5s ease-out forwards infinite;
 	animation-direction: alternate;
   animation-delay: 1s; /
 }

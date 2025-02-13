@@ -55,13 +55,12 @@ body {
 	font-weight: bold;
 	cursor: pointer;
 	padding: 10px 20px;
-	transition: background 0.5s, color 0.5s;
+	transition: color 0.5s, scale 0.5s;
 }
 
 .header__buttons button:hover {
-	background: grey;
-	color: black;
-	border-radius: 5px;
+	color: #f39c12;
+	scale: 1.2;
 }
 
 /* Анімація логотипу */

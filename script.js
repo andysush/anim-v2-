@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.getElementById("auth-form").addEventListener("submit", function (e) {
 		e.preventDefault();
 		if (submitBtn.textContent === "Зареєструватися") {
-			alert("❌ Реєстрація неможлива. Зверніться до адміністратора.");
+			alert("Реєстрація неможлива. Зверніться до адміністратора.");
 		} else {
-			alert("❌ Помилка входу. Обліковий запис не знайдено.");
+			alert("Помилка входу. Обліковий запис не знайдено.");
 		}
 	});
 });

@@ -45,50 +45,60 @@ body {
 }
 
 /* Анімація картинок */
-
 @keyframes logoSequence {
-	0% {
-		transform: translate(-50%, -50%) scale(0.1) rotate(0deg);
-		opacity: 0;
-	}
-	32.6% {
-		transform: translate(-50%, -50%) scale(1) rotate(360deg);
+	0%,
+	1.5% {
+		/* Лого стоїть нерухомо (0.3 сек) */
+		transform: translate(-50%, -50%) scale(1) rotate(0deg);
 		opacity: 1;
 	}
-	34.6% {
-		transform: translate(-50%, -50%) scale(1) rotate(360deg);
-		opacity: 1;
-	}
-	67.5% {
+	26.5% {
+		/* Лого зменшується та крутиться 5 сек */
 		transform: translate(-50%, -50%) scale(0.1) rotate(-360deg);
 		opacity: 0;
 	}
+	86% {
+		/* Лого ще невидиме, поки текст зникає */
+		transform: translate(-50%, -50%) scale(0.1);
+		opacity: 0;
+	}
 	100% {
-		transform: translate(-50%, -50%) scale(0.1) rotate(0deg);
+		/* Лого повертається, збільшуючись і крутячись (5 сек) */
+		transform: translate(-50%, -50%) scale(1) rotate(360deg);
+		opacity: 1;
+	}
+}
+
+@keyframes textSequence {
+	0%,
+	26.5% {
+		/* Текст поки невидимий */
+		transform: translate(-50%, -50%) scale(0.1);
+		opacity: 0;
+	}
+	40% {
+		/* Текст з’являється протягом 3 сек */
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 1;
+	}
+	70% {
+		/* Текст стоїть нерухомо (4 сек) */
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 1;
+	}
+	85% {
+		/* Текст зникає протягом 3 сек */
+		transform: translate(-50%, -50%) scale(0.1);
+		opacity: 0;
+	}
+	100% {
+		/* Текст невидимий перед новим циклом */
+		transform: translate(-50%, -50%) scale(0.1);
 		opacity: 0;
 	}
 }
 
-@keyframes textFadeIn {
-	0%,
-	67.5% {
-		transform: translate(-50%, -50%) scale(0.1);
-		opacity: 0;
-	}
-	87.3% {
-		transform: translate(-50%, -50%) scale(1);
-		opacity: 1;
-	}
-	113.5% {
-		transform: translate(-50%, -50%) scale(1);
-		opacity: 1;
-	}
-	133.3% {
-		transform: translate(-50%, -50%) scale(0.1);
-		opacity: 0;
-	}
-}
-/* Cтилі картинок */
+/* 🔹 Стилі для логотипу */
 #image {
 	position: fixed;
 	top: 50%;
@@ -96,11 +106,12 @@ body {
 	width: 90vw;
 	max-width: 600px;
 	height: auto;
-	transform: translate(-50%, -50%) scale(0.1);
-	opacity: 0;
-	animation: logoSequence 15.3s infinite;
+	transform: translate(-50%, -50%) scale(1);
+	opacity: 1;
+	animation: logoSequence 20s ease-in-out infinite;
 }
 
+/* 🔹 Стилі для тексту */
 #text {
 	position: fixed;
 	top: 50%;
@@ -110,7 +121,7 @@ body {
 	height: auto;
 	transform: translate(-50%, -50%) scale(0.1);
 	opacity: 0;
-	animation: textFadeIn 15.3s infinite;
+	animation: textSequence 20s ease-in-out infinite;
 }
 
 /* Модальне вікно */

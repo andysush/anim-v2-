@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		modal.style.display = "flex";
 
 		if (type === "register") {
-			modalTitle.textContent = "Реєстрація";
+			modalTitle.textContent = "Sign Up";
 			nameFields.style.display = "block";
-			submitBtn.textContent = "Зареєструватися";
+			submitBtn.textContent = "Registration";
 		} else {
-			modalTitle.textContent = "Вхід";
+			modalTitle.textContent = "Sign In";
 			nameFields.style.display = "none";
-			submitBtn.textContent = "Увійти";
+			submitBtn.textContent = "Login";
 		}
 	}
 
@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Форма (фейкова обробка)
 	document.getElementById("auth-form").addEventListener("submit", function (e) {
 		e.preventDefault();
-		if (submitBtn.textContent === "Зареєструватися") {
-			alert("Реєстрація неможлива. Зверніться до адміністратора.");
+		if (submitBtn.textContent === "Registration") {
+			alert("Registration is not possible. Please contact the administrator.");
 		} else {
-			alert("Помилка входу. Обліковий запис не знайдено.");
+			alert("Login error. Account not found.");
 		}
 	});
 });

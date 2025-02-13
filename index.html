@@ -12,15 +12,9 @@
 		<!-- header -->
 
 		<header class="header">
-			<nav class="header__nav">
-				<ul class="nav__list">
-					<li class="nav__item"><a href="#">Про нас</a></li>
-					<li class="nav__item"><a href="#">Контакти</a></li>
-				</ul>
-			</nav>
 			<div class="header__buttons">
-				<button id="register">Реєстрація</button>
-				<button id="login">Вхід</button>
+				<button id="register">Sign Up</button>
+				<button id="login">Sign In</button>
 			</div>
 		</header>
 
@@ -30,28 +24,28 @@
 		<div id="modal" class="modal">
 			<div class="modal__content">
 				<span class="modal__close">&times;</span>
-				<h2 id="modal-title">Реєстрація</h2>
+				<h2 id="modal-title">Sign Up</h2>
 				<form id="auth-form" novalidate>
 					<div id="name-fields">
 						<input
 							type="text"
 							id="first-name"
 							name="first-name"
-							placeholder="Ім'я"
+							placeholder="Name"
 							required
 						/>
 						<input
 							type="text"
 							id="last-name"
 							name="last-name"
-							placeholder="Прізвище"
+							placeholder="Last Name"
 							required
 						/>
 						<input
 							type="tel"
 							id="phone"
 							name="phone"
-							placeholder="Номер телефону"
+							placeholder="Phone"
 							required
 						/>
 					</div>
@@ -66,10 +60,10 @@
 						type="password"
 						id="password"
 						name="password"
-						placeholder="Пароль"
+						placeholder="Password"
 						required
 					/>
-					<button type="submit" id="submit-btn">Зареєструватися</button>
+					<button type="submit" id="submit-btn">Sign Up</button>
 				</form>
 			</div>
 		</div>

@@ -166,56 +166,56 @@ body {
 }
 
 /* Медіа-запити для адаптації під різні екрани */
-/* 📱📌 Середні екрани (планшети) */
+/*  Середні екрани (планшети) */
 @media (max-width: 1024px) {
 	#image {
-		width: 80vw;
-		max-width: 500px;
+		width: 75vw;
+		max-width: 480px;
 	}
 	#text {
-		width: 70vw;
-		max-width: 500px;
-		top: 38%;
+		width: 68vw;
+		max-width: 480px;
+		top: 37%;
 	}
 	#text2 {
-		width: 90vw; /* Збільшили ширину */
-		max-width: 600px;
-		top: 63%;
+		width: 92vw;
+		max-width: 720px;
+		top: 62%;
 	}
 }
 
-/* 📱 Малі екрани (телефони) */
+/*  Малі екрани (телефони) */
 @media (max-width: 768px) {
 	#image {
-		width: 70vw;
-		max-width: 400px;
+		width: 65vw;
+		max-width: 380px;
 	}
 	#text {
-		width: 65vw;
-		max-width: 450px;
-		top: 38%;
+		width: 60vw;
+		max-width: 400px;
+		top: 36%;
 	}
 	#text2 {
-		width: 75vw; /* Зробили ширшим */
+		width: 75vw;
 		max-width: 500px;
-		top: 62%;
+		top: 61%;
 	}
 }
 
 /* 📌 Дуже малі екрани (мінімальний розмір) */
 @media (max-width: 480px) {
 	#image {
-		width: 60vw;
-		max-width: 320px;
+		width: 55vw;
+		max-width: 300px;
 	}
 	#text {
-		width: 60vw;
-		max-width: 380px;
-		top: 36%;
+		width: 55vw;
+		max-width: 350px;
+		top: 34%;
 	}
 	#text2 {
-		width: 100vw; /* На мінімальних екранах — повна ширина */
-		max-width: 900px;
-		top: 64%;
+		width: 78vw;
+		max-width: 680px;
+		top: 63%;
 	}
 }

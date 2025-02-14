@@ -8,7 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
 	const loginBtn = document.getElementById("login");
 	const closeModal = document.querySelector(".modal__close");
 
-	modal.style.display = "none";
+	gsap
+		.timeline({ repeat: -1 }) // Безкінечний цикл
+		.to("#image", { duration: 5, scale: 1.2, rotate: 360, opacity: 1 }) // Логотип з'являється
+		.to("#image", { duration: 5, scale: 0.1, rotate: -360, opacity: 0 }) // Логотип зникає
+		.fromTo(
+			"#text, #text2",
+			{ scale: 0.1, opacity: 0 },
+			{ duration: 3, scale: 1.2, opacity: 1 }
+		) // Обидва тексти з'являються одночасно
+		.to("#text, #text2", { duration: 3, opacity: 1 }) // Тримаються 4 секунди
+		.to("#text, #text2", { duration: 3, scale: 0.1, opacity: 0 }); // Разом зникають
 
 	// Відкриття модального вікна
 	function openModal(type) {

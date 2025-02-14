@@ -45,74 +45,28 @@ body {
 }
 
 /* Анімація картинок */
-@keyframes logoSequence {
-	0%,
-	1.5% {
-		/* Лого стоїть нерухомо (0.3 сек) */
-		transform: translate(-50%, -50%) scale(1) rotate(0deg);
-		opacity: 1;
-	}
-	26.5% {
-		/* Лого зменшується та крутиться 5 сек */
-		transform: translate(-50%, -50%) scale(0.1) rotate(-360deg);
-		opacity: 0;
-	}
-	86% {
-		/* Лого ще невидиме, поки текст зникає */
-		transform: translate(-50%, -50%) scale(0.1);
-		opacity: 0;
-	}
-	100% {
-		/* Лого повертається, збільшуючись і крутячись (5 сек) */
-		transform: translate(-50%, -50%) scale(1) rotate(360deg);
-		opacity: 1;
-	}
+/* Скидання стилів */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-@keyframes textSequence {
-	0%,
-	26.5% {
-		/* Текст поки невидимий */
-		transform: translate(-50%, -50%) scale(0.1);
-		opacity: 0;
-	}
-	40% {
-		/* Текст з’являється протягом 3 сек */
-		transform: translate(-50%, -50%) scale(1);
-		opacity: 1;
-	}
-	70% {
-		/* Текст стоїть нерухомо (4 сек) */
-		transform: translate(-50%, -50%) scale(1);
-		opacity: 1;
-	}
-	85% {
-		/* Текст зникає протягом 3 сек */
-		transform: translate(-50%, -50%) scale(0.1);
-		opacity: 0;
-	}
-	100% {
-		/* Текст невидимий перед новим циклом */
-		transform: translate(-50%, -50%) scale(0.1);
-		opacity: 0;
-	}
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	flex-direction: column;
 }
 
-/* 🔹 Стилі для логотипу */
+/* 🔹 Логотип */
 #image {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	width: 90vw;
-	max-width: 600px;
-	height: auto;
-	transform: translate(-50%, -50%) scale(1);
-	opacity: 1;
-	animation: logoSequence 20s ease-in-out infinite;
-}
-
-/* 🔹 Стилі для тексту */
-#text {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -121,7 +75,33 @@ body {
 	height: auto;
 	transform: translate(-50%, -50%) scale(0.1);
 	opacity: 0;
-	animation: textSequence 20s ease-in-out infinite;
+	animation: logoSequence 15.3s infinite;
+}
+
+#text {
+	position: fixed;
+	top: 42%; /* 🔹 Ще вище */
+	left: 50%;
+	width: 85vw;
+	max-width: 580px;
+	height: auto;
+	transform: translate(-50%, -50%) scale(0.1);
+	opacity: 0;
+	animation: textFadeIn 15.3s infinite;
+	z-index: 2;
+}
+
+/* 🔹 Слоган (нижній текст) */
+#text2 {
+	position: fixed;
+	top: 58%; /* 🔹 Ще нижче */
+	left: 50%;
+	width: 80vw;
+	max-width: 550px;
+	height: auto;
+	transform: translate(-50%, -50%) scale(0.1);
+	opacity: 0;
+	animation: text2FadeIn 15.3s infinite;
 }
 
 /* Модальне вікно */
@@ -187,49 +167,45 @@ body {
 	background: gray;
 }
 
-/* Адаптація під мобільні пристрої */
+/* Медіа-запити для адаптації під різні екрани */
+
+/* Середні екрани (планшети) */
 @media (max-width: 1024px) {
 	#image {
 		width: 80vw;
 		max-width: 500px;
 	}
-	#text {
+	#text,
+	#text2 {
 		width: 75vw;
 		max-width: 470px;
 	}
 }
 
-/* Малі екрани (телефони) */
+/*  Малі екрани (телефони) */
 @media (max-width: 768px) {
 	#image {
 		width: 70vw;
 		max-width: 400px;
 	}
 	#text {
-		width: 65vw;
-		max-width: 370px;
+		top: 40%;
+	}
+	#text2 {
+		top: 60%;
 	}
 }
 
-/* Дуже малі екрани (мінімальний розмір) */
+/*  Дуже малі екрани (мінімальний розмір) */
 @media (max-width: 480px) {
-	.header {
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		padding: 10px;
-	}
-
-	.header__buttons {
-		margin-top: 10px;
-		gap: 5px;
-	}
 	#image {
 		width: 60vw;
 		max-width: 320px;
 	}
 	#text {
-		width: 55vw;
-		max-width: 300px;
+		top: 38%;
+	}
+	#text2 {
+		top: 62%;
 	}
 }

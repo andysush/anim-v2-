@@ -80,7 +80,7 @@ body {
 
 #text {
 	position: fixed;
-	top: 42%; /* 🔹 Ще вище */
+	top: 40%; /* 🔹 Ще вище */
 	left: 50%;
 	width: 85vw;
 	max-width: 580px;
@@ -94,7 +94,7 @@ body {
 /* 🔹 Слоган (нижній текст) */
 #text2 {
 	position: fixed;
-	top: 58%; /* 🔹 Ще нижче */
+	top: 60%; /* 🔹 Ще нижче */
 	left: 50%;
 	width: 80vw;
 	max-width: 550px;

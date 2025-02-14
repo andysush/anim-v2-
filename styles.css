@@ -75,7 +75,6 @@ body {
 	height: auto;
 	transform: translate(-50%, -50%) scale(0.1);
 	opacity: 0;
-	animation: logoSequence 15.3s infinite;
 }
 
 #text {
@@ -87,21 +86,20 @@ body {
 	height: auto;
 	transform: translate(-50%, -50%) scale(0.1);
 	opacity: 0;
-	animation: textFadeIn 15.3s infinite;
+
 	z-index: 2;
 }
 
 /* 🔹 Слоган (нижній текст) */
 #text2 {
 	position: fixed;
-	top: 60%; /* 🔹 Ще нижче */
+	top: 65%; /* 🔹 Ще нижче */
 	left: 50%;
-	width: 80vw;
-	max-width: 550px;
+	width: 100vw;
+	max-width: 800px;
 	height: auto;
 	transform: translate(-50%, -50%) scale(0.1);
 	opacity: 0;
-	animation: text2FadeIn 15.3s infinite;
 }
 
 /* Модальне вікно */
@@ -168,44 +166,56 @@ body {
 }
 
 /* Медіа-запити для адаптації під різні екрани */
-
-/* Середні екрани (планшети) */
+/* 📱📌 Середні екрани (планшети) */
 @media (max-width: 1024px) {
 	#image {
 		width: 80vw;
 		max-width: 500px;
 	}
-	#text,
+	#text {
+		width: 70vw;
+		max-width: 500px;
+		top: 38%;
+	}
 	#text2 {
-		width: 75vw;
-		max-width: 470px;
+		width: 90vw; /* Збільшили ширину */
+		max-width: 600px;
+		top: 63%;
 	}
 }
 
-/*  Малі екрани (телефони) */
+/* 📱 Малі екрани (телефони) */
 @media (max-width: 768px) {
 	#image {
 		width: 70vw;
 		max-width: 400px;
 	}
 	#text {
-		top: 40%;
+		width: 65vw;
+		max-width: 450px;
+		top: 38%;
 	}
 	#text2 {
-		top: 60%;
+		width: 75vw; /* Зробили ширшим */
+		max-width: 500px;
+		top: 62%;
 	}
 }
 
-/*  Дуже малі екрани (мінімальний розмір) */
+/* 📌 Дуже малі екрани (мінімальний розмір) */
 @media (max-width: 480px) {
 	#image {
 		width: 60vw;
 		max-width: 320px;
 	}
 	#text {
-		top: 38%;
+		width: 60vw;
+		max-width: 380px;
+		top: 36%;
 	}
 	#text2 {
-		top: 62%;
+		width: 100vw; /* На мінімальних екранах — повна ширина */
+		max-width: 900px;
+		top: 64%;
 	}
 }
